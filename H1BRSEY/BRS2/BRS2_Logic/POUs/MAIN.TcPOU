@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+  <POU Name="MAIN" Id="{dccfa27a-810e-40bf-80c7-52538d0fa408}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	offsetTime: LREAL:=0;
+	offsetIndex: INT:=11;
+
+	H1_ISI_GND_BRS_ETMY_TILT AT %MD0: INT;
+	H1_ISI_GND_BRS_ETMY_DRIFT AT %MD1: INT;
+	H1_ISI_GND_BRS_ETMY_VEL AT %MD2: INT;(*~ (OPC : 1 : visible for OPC-Server) 
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Sqrt(Velocity): DESC)
+										(OPC_PROP[0103] :-500: LOPR)
+										(OPC_PROP[0102] :+500: HOPR)
+										(OPC_PROP[8500] :3: PREC)
+										*)
+	H1_ISI_GND_BRS_ETMY_REF AT %MD3: INT;		
+	H1_ISI_GND_BRS_ETMY_CPULSE AT %MD4: INT;
+	H1_ISI_GND_BRS_ETMY_LIGHTSRC AT %MD5: INT;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Light Source Status: DESC)
+										(OPC_PROP[0106] :GOOD: ONAM)
+										(OPC_PROP[0107] :BAD: ZNAM)
+										*)
+	H1_ISI_GND_BRS_ETMY_CAMERA AT %MD6: INT;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Camera Status: DESC)
+										(OPC_PROP[0106] :GOOD: ONAM)
+										(OPC_PROP[0107] :BAD: ZNAM)
+										*)
+	
+	H1_ISI_GND_BRS_ETMY_PULSECHECK: INT:=0;
+	H1_ISI_GND_BRS_ETMY_DAMPTIM: REAL;
+	H1_ISI_GND_BRS_ETMY_RELAY1: BOOL;
+	H1_ISI_GND_BRS_ETMY_RELAY2: BOOL;
+	H1_ISI_GND_BRS_ETMY_DRIFTBIT: BOOL;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Drift Status: DESC)
+										(OPC_PROP[0106] :GOOD: ONAM)
+										(OPC_PROP[0107] :BAD: ZNAM)
+										*)
+	H1_ISI_GND_BRS_ETMY_MODBIT: BOOL;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :ISI Modules Status: DESC)
+										(OPC_PROP[0106] :GOOD: ONAM)
+										(OPC_PROP[0107] :BAD: ZNAM)
+										*)
+	H1_ISI_GND_BRS_ETMY_BOXBIT: BOOL;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :BRS Box Status: DESC)
+										(OPC_PROP[0106] :GOOD: ONAM)
+										(OPC_PROP[0107] :BAD: ZNAM)
+										*)
+	H1_ISI_GND_BRS_ETMY_CAPDRIVE: INT;
+		
+	H1_ISI_GND_BRS_ETMY_TEMPL (*AT %IW0*): INT;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Tempurature Left: DESC)
+										(OPC_PROP[0100] :1/100 C: EGU)
+										(OPC_PROP[8500] :3: PREC)
+										*)
+	H1_ISI_GND_BRS_ETMY_TEMPR AT %IW1: INT;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :1: read-only)
+										(OPC_PROP[0101] :Tempurature Right: DESC)
+										(OPC_PROP[0100] :1/100 C: EGU)
+										(OPC_PROP[8500] :3: PREC)
+										*)
+	H1_ISI_GND_BRS_ETMY_BOXIN AT %IW2: BOOL;
+	H1_ISI_GND_BRS_ETMY_MOD1IN AT %IW3: BOOL;
+	H1_ISI_GND_BRS_ETMY_MOD2IN AT %IW4: BOOL;	
+	H1_ISI_GND_BRS_ETMY_USER: BOOL:=TRUE;(*~ (OPC : 1 : visible for OPC-Server)
+											(OPC_PROP[0005] :3: read/write)
+											(OPC_PROP[0101] :User Damping Control: DESC)
+											(OPC_PROP[0106] :On: ONAM)
+											(OPC_PROP[0107] :Off: ZNAM)
+											*)	
+	H1_ISI_GND_BRS_ETMY_LOWTHRESHOLD: INT:=800;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :3: read/write)
+										(OPC_PROP[0101] :Lower Damping Threshold: DESC)*)
+	H1_ISI_GND_BRS_ETMY_HIGHTHRESHOLD: INT:=2000;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :3: read/write)
+										(OPC_PROP[0101] :Upper Damping Threshold: DESC)*)
+	H1_ISI_GND_BRS_ETMY_DAMPTIMEOUT: REAL:=62500;(*~ (OPC : 1 : visible for OPC-Server)
+										(OPC_PROP[0005] :3: read/write)
+										(OPC_PROP[0101] :Damping Timeout: DESC)*)
+	
+	H1_ISI_GND_BRS_ETMY_CAPOUTL AT %QW0: INT;
+	H1_ISI_GND_BRS_ETMY_CAPOUTR AT %QW1: INT;
+	H1_ISI_GND_BRS_ETMY_AMPBIT AT %QW3: BOOL;(*~ (OPC : 1 : visible for OPC-Server)
+											(OPC_PROP[0005] :1: read-only)
+											(OPC_PROP[0101] :Amplitude Status: DESC)
+											(OPC_PROP[0106] :GOOD: ONAM)
+											(OPC_PROP[0107] :BAD: ZNAM)
+											*)
+	H1_ISI_GND_BRS_ETMY_TILTOUT AT %QW4: INT;
+	H1_ISI_GND_BRS_ETMY_DRIFTOUT AT %QW5: INT;
+	H1_ISI_GND_BRS_ETMY_REFOUT AT %QW6: INT;
+	H1_ISI_GND_BRS_ETMY_DAMPBIT AT %QW7: BOOL;(*~ (OPC : 1 : visible for OPC-Server)
+											(OPC_PROP[0005] :1: read-only)
+											(OPC_PROP[0101] :Damping Status: DESC)
+											(OPC_PROP[0106] :Damping: ONAM)
+											(OPC_PROP[0107] :Not Damping: ZNAM)
+											*)
+	
+	H1_ISI_GND_BRS_ETMY_CBIT AT %QW8: BOOL; (*~ (OPC : 1 : visible for OPC-Server)
+											(OPC_PROP[0005] :1: read-only)
+											(OPC_PROP[0101] :C# Running Status: DESC)
+											(OPC_PROP[0106] :GOOD: ONAM)
+											(OPC_PROP[0107] :BAD: ZNAM)
+											*)
+	
+	H1_ISI_GND_BRS_ETMY_RELAYL AT %QW9: BOOL;
+	H1_ISI_GND_BRS_ETMY_RELAYR AT %QW10: BOOL;
+	H1_ISI_GND_BRS_ETMY_NOTRELAYL AT %QW11: BOOL;
+	H1_ISI_GND_BRS_ETMY_NOTRELAYR AT %QW12: BOOL;
+	H1_ISI_GND_BRS_ETMY_STATUSOUT AT %QW13: INT;
+	
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*User master switch for damping*)
+IF H1_ISI_GND_BRS_ETMY_USER=TRUE
+THEN offsetTime:=0;
+	offsetIndex:=11;
+	(*If damper is on. 3276 = 1V output*)
+	IF H1_ISI_GND_BRS_ETMY_DAMPBIT=TRUE
+	THEN
+		(*If under lower threshold the damping timer turns on.*)
+		IF ABS(H1_ISI_GND_BRS_ETMY_VEL)<H1_ISI_GND_BRS_ETMY_LOWTHRESHOLD
+			(*Checks to see if damping timer is off and start Timer.*)
+			THEN IF H1_ISI_GND_BRS_ETMY_DAMPTIM <=0
+				THEN H1_ISI_GND_BRS_ETMY_DAMPTIM:=1;
+					H1_ISI_GND_BRS_ETMY_CAPDRIVE:=H1_ISI_GND_BRS_ETMY_VEL;
+				(*Damping timeout check*)
+				ELSE IF H1_ISI_GND_BRS_ETMY_DAMPTIM<H1_ISI_GND_BRS_ETMY_DAMPTIMEOUT
+					THEN 
+					H1_ISI_GND_BRS_ETMY_CAPDRIVE:=H1_ISI_GND_BRS_ETMY_VEL;
+					H1_ISI_GND_BRS_ETMY_DAMPTIM:=H1_ISI_GND_BRS_ETMY_DAMPTIM+1;
+					(*Damper timeout reset*)
+					ELSE
+						H1_ISI_GND_BRS_ETMY_DAMPBIT:=FALSE;
+						H1_ISI_GND_BRS_ETMY_CAPDRIVE:=0;
+						H1_ISI_GND_BRS_ETMY_DAMPTIM:=0;
+						H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+						H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+					END_IF
+				END_IF
+			(*If above lower threshold continue damping*)
+			ELSE
+				H1_ISI_GND_BRS_ETMY_DAMPTIM:=0;
+				H1_ISI_GND_BRS_ETMY_CAPDRIVE:=H1_ISI_GND_BRS_ETMY_VEL;
+			END_IF
+			(*If capdrive is positive send to left capacitor, if negative send to right capacitor*)
+			IF H1_ISI_GND_BRS_ETMY_CAPDRIVE >= 0
+			THEN H1_ISI_GND_BRS_ETMY_RELAY1:=TRUE;
+				H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+				H1_ISI_GND_BRS_ETMY_CAPOUTL:=H1_ISI_GND_BRS_ETMY_CAPDRIVE;
+				H1_ISI_GND_BRS_ETMY_CAPOUTR:=0;
+			ELSE H1_ISI_GND_BRS_ETMY_RELAY2:=TRUE;
+				H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+				H1_ISI_GND_BRS_ETMY_CAPOUTR:=-H1_ISI_GND_BRS_ETMY_CAPDRIVE;
+				H1_ISI_GND_BRS_ETMY_CAPOUTL:=0;
+			END_IF	
+	(*If damper is off*)
+	ELSE 
+		(*Upper threshold check.*)
+		IF ABS(H1_ISI_GND_BRS_ETMY_VEL)>H1_ISI_GND_BRS_ETMY_HIGHTHRESHOLD
+		(*Sets damper on.*)
+		THEN H1_ISI_GND_BRS_ETMY_DAMPBIT:=TRUE;				
+		(*If below upper threshold turn off damping*)
+		ELSE (*H1_ISI_GND_BRS_ETMY_CAPDRIVE:=0;
+			H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+			H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;*)
+			 H1_ISI_GND_BRS_ETMY_RELAY1:=TRUE;
+			 H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+			 IF H1_ISI_GND_BRS_ETMY_VEL=0
+				 THEN H1_ISI_GND_BRS_ETMY_CAPOUTL:=0;
+				 ELSE
+					 H1_ISI_GND_BRS_ETMY_CAPOUTL:= (H1_ISI_GND_BRS_ETMY_VEL/ABS(H1_ISI_GND_BRS_ETMY_VEL))*(H1_ISI_GND_BRS_ETMY_VEL*H1_ISI_GND_BRS_ETMY_VEL)/20/1000+1600;
+			 END_IF			 
+			 H1_ISI_GND_BRS_ETMY_CAPOUTR:=0;
+		END_IF
+	END_IF	
+(*User control check.*)
+ELSE H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+	H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+	H1_ISI_GND_BRS_ETMY_CAPDRIVE:=0;
+	H1_ISI_GND_BRS_ETMY_CAPOUTL:=0;
+	H1_ISI_GND_BRS_ETMY_CAPOUTR:=0;
+	H1_ISI_GND_BRS_ETMY_DAMPBIT:=FALSE;	
+	
+	(*Contact potential measurement code*)
+	(*IF offsetIndex>=0
+		THEN
+		H1_ISI_GND_BRS_ETMY_RELAY1:=TRUE;
+		H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+		H1_ISI_GND_BRS_ETMY_CAPOUTL:=LREAL_TO_INT(3276*0.1*SIN(2*PI*offsetTime/250*0.004)+3276*0.05*offsetIndex+3276*0.1);
+		H1_ISI_GND_BRS_ETMY_CAPOUTR:=0;
+		IF ((12-offsetIndex)*250*3000-offsetTime)<=0
+			THEN offsetIndex:=offsetIndex-1;
+		END_IF
+		offsetTime:=offsetTime+1;
+	ELSE
+		offsetTime:=0;
+		H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+		H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+		H1_ISI_GND_BRS_ETMY_CAPDRIVE:=0;
+		H1_ISI_GND_BRS_ETMY_CAPOUTL:=0;
+		H1_ISI_GND_BRS_ETMY_CAPOUTR:=0;
+		H1_ISI_GND_BRS_ETMY_DAMPBIT:=FALSE;	
+	END_IF
+	H1_ISI_GND_BRS_ETMY_TEMPL:=H1_ISI_GND_BRS_ETMY_CAPOUTL;*)
+END_IF
+(*Nonlinear amplitude check. Sets amplitude status bit.*)
+IF ABS(H1_ISI_GND_BRS_ETMY_TILT)>10000
+	THEN H1_ISI_GND_BRS_ETMY_AMPBIT:=FALSE;
+ELSE H1_ISI_GND_BRS_ETMY_AMPBIT:=TRUE;
+END_IF
+(*Drift amplitude check.*)
+IF ABS(H1_ISI_GND_BRS_ETMY_DRIFT)>=32000
+	THEN H1_ISI_GND_BRS_ETMY_DRIFTBit:=FALSE;
+ELSE H1_ISI_GND_BRS_ETMY_DRIFTBit:=TRUE;
+END_IF
+(*C# code pulse check. Sets C# code status bit.*)
+IF H1_ISI_GND_BRS_ETMY_PULSECHECK>=10
+	THEN H1_ISI_GND_BRS_ETMY_PULSECHECK:=0;
+	IF H1_ISI_GND_BRS_ETMY_CPULSE=1
+		THEN H1_ISI_GND_BRS_ETMY_CBIT:=TRUE;
+		H1_ISI_GND_BRS_ETMY_CPULSE:=0;		
+	ELSE H1_ISI_GND_BRS_ETMY_CBIT:=FALSE;		
+	END_IF
+END_IF
+IF H1_ISI_GND_BRS_ETMY_CBIT=FALSE
+	THEN(*Turns damping off if C# code isn't running.*)
+		H1_ISI_GND_BRS_ETMY_VEL:=0;
+		H1_ISI_GND_BRS_ETMY_CAPDRIVE:=0;
+		H1_ISI_GND_BRS_ETMY_RELAY1:=FALSE;
+		H1_ISI_GND_BRS_ETMY_RELAY2:=FALSE;
+END_IF
+(*Beckhoff status inversion*)
+H1_ISI_GND_BRS_ETMY_BOXBIT:=NOT H1_ISI_GND_BRS_ETMY_BOXIN;
+H1_ISI_GND_BRS_ETMY_MODBIT:= NOT H1_ISI_GND_BRS_ETMY_MOD1IN OR NOT H1_ISI_GND_BRS_ETMY_MOD2IN;
+(*Overview status out construction. If any error flags are raised set status to 0V, else if damping set to 2 V, else set to 5V*)
+IF (H1_ISI_GND_BRS_ETMY_CBIT=FALSE) OR (H1_ISI_GND_BRS_ETMY_AMPBIT=FALSE) OR (H1_ISI_GND_BRS_ETMY_DRIFTBIT=FALSE) OR (H1_ISI_GND_BRS_ETMY_LIGHTSRC=0) OR (H1_ISI_GND_BRS_ETMY_CAMERA=0) OR (H1_ISI_GND_BRS_ETMY_MODBIT=FALSE) OR (H1_ISI_GND_BRS_ETMY_BOXBIT=FALSE)
+	THEN 
+		H1_ISI_GND_BRS_ETMY_STATUSOUT:=0;
+		(*H1_ISI_GND_BRS_ETMY_USER:= FALSE;*)
+ELSE IF H1_ISI_GND_BRS_ETMY_DAMPBIT=TRUE
+	THEN H1_ISI_GND_BRS_ETMY_STATUSOUT:=2*3276;
+	ELSE
+		H1_ISI_GND_BRS_ETMY_STATUSOUT:=5*3276;
+	END_IF
+END_IF
+H1_ISI_GND_BRS_ETMY_PULSECHECK:=H1_ISI_GND_BRS_ETMY_PULSECHECK+1;
+(*Relay states set so the capacitors are either passed the damping signal or grounded.*)
+H1_ISI_GND_BRS_ETMY_RELAYL:= H1_ISI_GND_BRS_ETMY_RELAY1;
+H1_ISI_GND_BRS_ETMY_RELAYR:= H1_ISI_GND_BRS_ETMY_RELAY2;
+H1_ISI_GND_BRS_ETMY_NOTRELAYL:= NOT H1_ISI_GND_BRS_ETMY_RELAY1;
+H1_ISI_GND_BRS_ETMY_NOTRELAYR:= NOT H1_ISI_GND_BRS_ETMY_RELAY2;
+
+H1_ISI_GND_BRS_ETMY_TILTOUT:=H1_ISI_GND_BRS_ETMY_TILT;
+H1_ISI_GND_BRS_ETMY_DRIFTOUT:=H1_ISI_GND_BRS_ETMY_DRIFT;
+H1_ISI_GND_BRS_ETMY_REFOUT:=H1_ISI_GND_BRS_ETMY_REF;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
