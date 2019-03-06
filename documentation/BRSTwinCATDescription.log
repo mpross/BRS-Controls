@@ -1,0 +1,729 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.25)  5 MAR 2019 16:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**BRSTwinCATDescription.tex
+(./BRSTwinCATDescription.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count87
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count88
+\lst@currlwidth=\dimen103
+\lst@column=\count89
+\lst@pos=\count90
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count91
+\lst@lineno=\count92
+\lst@maxwidth=\dimen106
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count93
+\lst@skipnumbers=\count94
+\lst@framebox=\box27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count95
+))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count96
+\Gm@cntv=\count97
+\c@Gm@tempcnt=\count98
+\Gm@bindingoffset=\dimen109
+\Gm@wd@mp=\dimen110
+\Gm@odd@mp=\dimen111
+\Gm@even@mp=\dimen112
+\Gm@layoutwidth=\dimen113
+\Gm@layoutheight=\dimen114
+\Gm@layouthoffset=\dimen115
+\Gm@layoutvoffset=\dimen116
+\Gm@dimlist=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(./BRSTwinCATDescription.aux)
+\openout1 = `BRSTwinCATDescription.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+\c@lstlisting=\count99
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen117
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen118
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks18
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=542.02501pt
+* \textheight=722.7pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 42.
+<TwinCATScreen.png, id=1, 1924.18875pt x 1049.9225pt>
+File: TwinCATScreen.png Graphic file (type png)
+ <use TwinCATScreen.png>
+Package pdftex.def Info: TwinCATScreen.png used on input line 47.
+(pdftex.def)             Requested size: 542.02501pt x 295.75456pt.
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 54--55
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 55--56
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (27.96333pt too wide) in paragraph at lines 55--56
+[][][][][][][][] 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./TwinCATScreen.png>]
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 56--57
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 57--58
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 62--63
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 63--64
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 66--67
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 67--68
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 75--76
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 76--77
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 77--78
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 78--79
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 81--82
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 82--83
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 83--84
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 84--85
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 87--88
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 88--89
+[][][][][][][] 
+ []
+
+[2]
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 89--90
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 90--91
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 95--96
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 96--97
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 96--97
+[][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 97--98
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 100--101
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 101--102
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 101--102
+[][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 102--103
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 108--109
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (39.3033pt too wide) in paragraph at lines 108--109
+[][][][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 109--110
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (10.95338pt too wide) in paragraph at lines 109--110
+[][][][] 
+ []
+
+
+Overfull \hbox (22.29335pt too wide) in paragraph at lines 109--110
+[][][] 
+ []
+
+
+Overfull \hbox (27.96333pt too wide) in paragraph at lines 109--110
+[][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 109--110
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 110--111
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 110--111
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 110--111
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 111--112
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (10.95338pt too wide) in paragraph at lines 111--112
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 111--112
+[][][]  
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 114--115
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 115--116
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 117--118
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 118--119
+[][][][][][][] 
+ []
+
+[3]
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 120--121
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (2.29335pt too wide) in paragraph at lines 121--123
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 126--127
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (33.63332pt too wide) in paragraph at lines 126--127
+[][][][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 127--128
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (39.3033pt too wide) in paragraph at lines 127--128
+[][][][] 
+ []
+
+
+Overfull \hbox (22.29335pt too wide) in paragraph at lines 127--128
+[][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 127--128
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 128--129
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (16.62337pt too wide) in paragraph at lines 128--129
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 128--129
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 129--130
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (10.95338pt too wide) in paragraph at lines 129--130
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 129--130
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 135--136
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (33.63332pt too wide) in paragraph at lines 135--136
+[][][][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 136--137
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (27.96333pt too wide) in paragraph at lines 136--137
+[][][][] 
+ []
+
+
+Overfull \hbox (22.29335pt too wide) in paragraph at lines 136--137
+[][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 136--137
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 137--138
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (33.63332pt too wide) in paragraph at lines 137--138
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 137--138
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 138--139
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 138--139
+[][][][] 
+ []
+
+
+Overfull \hbox (27.96333pt too wide) in paragraph at lines 138--139
+[][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 138--139
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 142--143
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (33.63332pt too wide) in paragraph at lines 142--143
+[][][][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 143--144
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (22.29335pt too wide) in paragraph at lines 143--144
+[][][] 
+ []
+
+
+Overfull \hbox (22.29335pt too wide) in paragraph at lines 143--144
+[][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 143--144
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 144--145
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (16.62337pt too wide) in paragraph at lines 144--145
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 144--145
+[][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 145--146
+[][][][][][][] 
+ []
+
+
+Overfull \hbox (10.95338pt too wide) in paragraph at lines 145--146
+[][][][][] 
+ []
+
+
+Overfull \hbox (5.2834pt too wide) in paragraph at lines 145--146
+[][][]  
+ []
+
+[4]
+Overfull \hbox (19.3033pt too wide) in paragraph at lines 174--175
+[][][][][][][]  
+ []
+
+[5]
+Overfull \hbox (345.48238pt too wide) in paragraph at lines 213--214
+[][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (41.98323pt too wide) in paragraph at lines 214--215
+[][][][][][][]  
+ []
+
+
+Overfull \hbox (47.65321pt too wide) in paragraph at lines 215--216
+[][][][][][][]  
+ []
+
+[6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 282.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 282.
+ [7]
+(./BRSTwinCATDescription.aux) ) 
+Here is how much of TeX's memory you used:
+ 3522 strings out of 494945
+ 51271 string characters out of 6181032
+ 172105 words of memory out of 5000000
+ 6786 multiletter control sequences out of 15000+600000
+ 7914 words of font info for 29 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 39i,6n,32p,321b,1515s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on BRSTwinCATDescription.pdf (7 pages, 188263 bytes).
+PDF statistics:
+ 59 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
